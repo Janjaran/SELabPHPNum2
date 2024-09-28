@@ -18,24 +18,23 @@
     
 <h2>
     <?php
-		if(isset($_SESSION['error'])) {
-            echo $_SESSION['error'] . " is already logged in. Wait for them to log out first.";
-            unset($_SESSION['error']);
-		} elseif(isset($_SESSION['Username'])) {
-            echo "User logged in: " . $_SESSION['Username'];
-		}
-		?>	
+    // when someone is already logged in
+    if(isset($_SESSION['error'])) {
+        echo $_SESSION['error'] . " is already logged in. Wait for them to log out first.";
+        unset($_SESSION['error']); 
+    } elseif(isset($_SESSION['Username'])) {
+        echo "User logged in: " . $_SESSION['Username'];
+    }
+    ?>
+</h2>
 
-	</h2>
-
-    <h2>
-        <?php
-        if(isset($_SESSION['password'])) {
-            echo "User password: ";
-            echo $_SESSION['password'];
-        }
-        ?>      
-    </h2>
+<h2>
+    <?php
+    if(isset($_SESSION['password'])) {
+        echo "User password: " . $_SESSION['password'];
+    }
+    ?>
+</h2>
     
 </body>
 </html>
